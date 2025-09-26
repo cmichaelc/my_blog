@@ -17,7 +17,11 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'user_id' => \App\Models\User::factory(),
+            'title' => $this->faker->sentence(3),
+            'content' => $this->faker->sentence(10),
+            'image' => $this->faker->imageUrl(),
         ];
     }
 }
